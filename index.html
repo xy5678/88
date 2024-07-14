@@ -85,7 +85,6 @@
             event.preventDefault();
             
             const name = form.name.value;
-            const email = form.email.value;
             const message = form.message.value;
             
             // Create a new message object
@@ -93,7 +92,6 @@
             const newMessage = new Message();
             
             newMessage.set('name', name);
-            newMessage.set('email', email);
             newMessage.set('message', message);
             
             // Save the message to LeanCloud
@@ -115,7 +113,7 @@
                 messagesList.innerHTML = '';
                 messages.forEach(function(message) {
                     const li = document.createElement('li');
-                    li.textContent = `${message.get('name')} (${message.get('email')}): ${message.get('message')}`;
+                    li.textContent = `${message.get('name')} ， ${message.get('message')}`;
                     messagesList.appendChild(li);
                 });
             }, function(error) {
